@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:spotify_clone/core/config/theme/app.theme.dart';
+import 'package:spotify_clone/presentation/pages/splash.page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'Spotify Clone',
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
-      home: Container(),
+      home: const SplashPage(),
     );
   }
 }
