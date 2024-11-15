@@ -6,6 +6,7 @@ abstract class AppTheme {
   ///
   ///Custom designed theme for light mode.
   static final lightTheme = ThemeData(
+    fontFamily: 'Satoshi',
     primaryColor: AppColors.primary,
     scaffoldBackgroundColor: AppColors.lightBackground,
     brightness: Brightness.light,
@@ -27,6 +28,7 @@ abstract class AppTheme {
   ///
   ///Custom designed theme for dark mode.
   static final darkTheme = ThemeData(
+    fontFamily: 'Satoshi',
     primaryColor: AppColors.primary,
     scaffoldBackgroundColor: AppColors.darkBackground,
     brightness: Brightness.dark,
