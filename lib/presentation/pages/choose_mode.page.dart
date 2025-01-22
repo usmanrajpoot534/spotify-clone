@@ -1,10 +1,13 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_extensions_pack/flutter_extensions_pack.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:spotify_clone/common/app.assets.dart';
 import 'package:spotify_clone/common/app.enums.dart';
+import 'package:spotify_clone/presentation/blocs/theme_cubit.dart';
+import 'package:spotify_clone/presentation/pages/signup_or_signin_page.dart';
 import 'package:spotify_clone/presentation/widgets/app.button.dart';
 import 'package:spotify_clone/presentation/widgets/app.imageholder.dart';
 
@@ -45,8 +48,8 @@ class ChooseModePage extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    _modeSelector(ThemeMode.light),
-                    _modeSelector(ThemeMode.dark),
+                    _modeSelector(context, ThemeMode.light),
+                    _modeSelector(context, ThemeMode.dark),
                   ],
                 ),
                 20.spaceY,
@@ -54,7 +57,7 @@ class ChooseModePage extends StatelessWidget {
                   title: 'Continue',
                   onPressed: () {
                     context.pushReplacement(
-                      const ChooseModePage(),
+                      const SignupOrSigninPage(),
                     );
                   },
                 ),
@@ -66,23 +69,28 @@ class ChooseModePage extends StatelessWidget {
     );
   }
 
-  Widget _modeSelector(ThemeMode mode) {
+  Widget _modeSelector(BuildContext context, ThemeMode mode) {
     final isLight = mode == ThemeMode.light;
     return Column(
       children: [
-        ClipOval(
-          child: BackdropFilter(
-            filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-            child: Container(
-              height: 80,
-              width: 80,
-              decoration: BoxDecoration(
-                color: const Color(0xff30393c).withOpacity(0.5),
-                shape: BoxShape.circle,
-              ),
-              child: SvgPicture.asset(
-                isLight ? AppAssets.moon : AppAssets.sun,
-                fit: BoxFit.none,
+        InkWell(
+          onTap: () {
+            context.read<ThemeCubit>().updateTheme(mode);
+          },
+          child: ClipOval(
+            child: BackdropFilter(
+              filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+              child: Container(
+                height: 80,
+                width: 80,
+                decoration: BoxDecoration(
+                  color: const Color(0xff30393c).withOpacity(0.5),
+                  shape: BoxShape.circle,
+                ),
+                child: SvgPicture.asset(
+                  isLight ? AppAssets.moon : AppAssets.sun,
+                  fit: BoxFit.none,
+                ),
               ),
             ),
           ),
@@ -100,5 +108,3 @@ class ChooseModePage extends StatelessWidget {
     );
   }
 }
-
-enum ThemeMode { light, dark }
