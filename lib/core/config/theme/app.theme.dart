@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_extensions_pack/flutter_extensions_pack.dart';
 import 'package:spotify_clone/core/config/theme/app.colors.dart';
 
 abstract class AppTheme {
@@ -23,6 +24,37 @@ abstract class AppTheme {
         ),
       ),
     ),
+    inputDecorationTheme: InputDecorationTheme(
+      contentPadding: 28.padAll,
+      hintStyle: const TextStyle(
+        color: Color(0xFF383838),
+        fontWeight: FontWeight.w500,
+      ),
+      border: OutlineInputBorder(
+        borderRadius: 30.circularRadius,
+        borderSide: const BorderSide(color: Colors.black, width: 0.5),
+      ),
+      enabledBorder: OutlineInputBorder(
+        borderRadius: 30.circularRadius,
+        borderSide: const BorderSide(color: Colors.black, width: 0.5),
+      ),
+      disabledBorder: OutlineInputBorder(
+        borderRadius: 30.circularRadius,
+        borderSide: const BorderSide(color: Colors.black, width: 0.5),
+      ),
+      focusedBorder: OutlineInputBorder(
+        borderRadius: 30.circularRadius,
+        borderSide: const BorderSide(color: Colors.black, width: 0.5),
+      ),
+      focusedErrorBorder: OutlineInputBorder(
+        borderRadius: 30.circularRadius,
+        borderSide: const BorderSide(color: Colors.red, width: 0.5),
+      ),
+      errorBorder: OutlineInputBorder(
+        borderRadius: 30.circularRadius,
+        borderSide: const BorderSide(color: Colors.red, width: 0.5),
+      ),
+    ),
   );
 
   ///## Dark Theme
@@ -44,6 +76,37 @@ abstract class AppTheme {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30),
         ),
+      ),
+    ),
+    inputDecorationTheme: InputDecorationTheme(
+      contentPadding: 28.padAll,
+      hintStyle: const TextStyle(
+        color: Color(0xFFA7A7A7),
+        fontWeight: FontWeight.w500,
+      ),
+      border: OutlineInputBorder(
+        borderRadius: 30.circularRadius,
+        borderSide: const BorderSide(color: Colors.white, width: 0.5),
+      ),
+      enabledBorder: OutlineInputBorder(
+        borderRadius: 30.circularRadius,
+        borderSide: const BorderSide(color: Colors.white, width: 0.5),
+      ),
+      disabledBorder: OutlineInputBorder(
+        borderRadius: 30.circularRadius,
+        borderSide: const BorderSide(color: Colors.white, width: 0.5),
+      ),
+      focusedBorder: OutlineInputBorder(
+        borderRadius: 30.circularRadius,
+        borderSide: const BorderSide(color: Colors.white, width: 0.5),
+      ),
+      focusedErrorBorder: OutlineInputBorder(
+        borderRadius: 30.circularRadius,
+        borderSide: const BorderSide(color: Colors.red, width: 0.5),
+      ),
+      errorBorder: OutlineInputBorder(
+        borderRadius: 30.circularRadius,
+        borderSide: const BorderSide(color: Colors.red, width: 0.5),
       ),
     ),
   );

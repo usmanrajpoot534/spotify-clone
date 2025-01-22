@@ -88,7 +88,7 @@ class ChooseModePage extends StatelessWidget {
                   shape: BoxShape.circle,
                 ),
                 child: SvgPicture.asset(
-                  isLight ? AppAssets.moon : AppAssets.sun,
+                  isLight ? AppAssets.sun : AppAssets.moon,
                   fit: BoxFit.none,
                 ),
               ),

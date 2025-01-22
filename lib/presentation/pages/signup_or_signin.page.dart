@@ -3,6 +3,8 @@ import 'package:flutter_extensions_pack/flutter_extensions_pack.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:spotify_clone/common/app.assets.dart';
 import 'package:spotify_clone/core/config/theme/app.colors.dart';
+import 'package:spotify_clone/presentation/pages/signin.page.dart';
+import 'package:spotify_clone/presentation/pages/signup.page.dart';
 import 'package:spotify_clone/presentation/widgets/app.button.dart';
 import 'package:spotify_clone/presentation/widgets/app.custom_appbar.dart';
 
@@ -51,13 +53,17 @@ class SignupOrSigninPage extends StatelessWidget {
                     children: [
                       Expanded(
                         child: AppButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            context.push(const SignupPage());
+                          },
                           title: 'Register',
                         ),
                       ),
                       Expanded(
                         child: TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            context.push(const SigninPage());
+                          },
                           style: TextButton.styleFrom(
                             foregroundColor:
                                 Theme.of(context).brightness == Brightness.dark
