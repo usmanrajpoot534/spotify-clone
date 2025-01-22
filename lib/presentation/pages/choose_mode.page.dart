@@ -7,7 +7,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:spotify_clone/common/app.assets.dart';
 import 'package:spotify_clone/common/app.enums.dart';
 import 'package:spotify_clone/presentation/blocs/theme_cubit.dart';
-import 'package:spotify_clone/presentation/pages/signup_or_signin_page.dart';
+import 'package:spotify_clone/presentation/pages/signup_or_signin.page.dart';
 import 'package:spotify_clone/presentation/widgets/app.button.dart';
 import 'package:spotify_clone/presentation/widgets/app.imageholder.dart';
 
@@ -56,7 +56,7 @@ class ChooseModePage extends StatelessWidget {
                 AppButton(
                   title: 'Continue',
                   onPressed: () {
-                    context.pushReplacement(
+                    context.push(
                       const SignupOrSigninPage(),
                     );
                   },

@@ -53,7 +53,7 @@ class GetStartedPage extends StatelessWidget {
                 AppButton(
                   title: 'Get Started',
                   onPressed: () {
-                    context.pushReplacement(
+                    context.push(
                       const ChooseModePage(),
                     );
                   },

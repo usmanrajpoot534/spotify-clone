@@ -13,4 +13,13 @@ abstract class AppAssets {
 
   /// Sun Icon
   static const sun = 'assets/vectors/sun.svg';
+
+  /// Top Pattern
+  static const topPattern = 'assets/vectors/top_pattern.svg';
+
+  /// Bottom Pattern
+  static const bottomPattern = 'assets/vectors/bottom_pattern.svg';
+
+  /// Auth Page Background
+  static const authBG = 'assets/images/auth_bg.png';
 }
